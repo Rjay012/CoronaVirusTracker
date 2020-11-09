@@ -1,0 +1,49 @@
+<mat-form-field>
+    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search Vaccine">
+</mat-form-field>
+
+<table class="table table-bordered" mat-table [dataSource]="dataSource" matSort>
+    <ng-container matColumnDef="candidate">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Vaccine </th>
+        <td class="cell-padding" mat-cell *matCellDef="let element">{{ element.candidate }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="mechanism">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Mechanism </th>
+        <td class="cell-padding" mat-cell *matCellDef="let element"> {{ element.mechanism }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="details">
+        <th mat-header-cell *matHeaderCellDef >Details</th>
+        <td class="cell-padding" mat-cell *matCellDef="let element">
+            <button class="btn btn-success btn-sm" type="button" (click)="openDialog(element.candidate, element.details)">
+                VIEW
+            </button>
+        </td>
+    </ng-container>
+
+    <ng-container matColumnDef="sponsors">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Sponsor </th>
+        <td class="cell-padding" mat-cell *matCellDef="let element"> {{ element.sponsors }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="trialPhase">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Trial Phase </th>
+        <td class="cell-padding" mat-cell *matCellDef="let element"> {{ element.trialPhase }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="institutions">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Institution </th>
+        <td class="cell-padding" mat-cell *matCellDef="let element"> {{ element.institutions }} </td>
+    </ng-container>
+
+    <!-- <ng-container matColumnDef="institutions">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Details </th>
+        <td mat-cell *matCellDef="let element"> {{ element.institutions }} </td>
+    </ng-container> -->
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+<mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>

@@ -1,0 +1,77 @@
+<div class="row">
+    <div class="col">
+        <div class="card border-primary">
+            <div class="card-body">
+                <h5 class="card-title"><i class="fas fa-check-circle"></i> <span class="float-right">Confirmed Cases</span></h5>
+                <h3 class="float-right">{{ global.cases | number }}</h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="col">
+        <div class="card border-danger">
+            <div class="card-body">
+                <h5 class="card-title"><i class="fas fa-check"></i> <span class="float-right">Active</span></h5>
+                <h3 class="float-right">{{ global.active | number }}</h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="col">
+        <div class="card border-success">
+            <div class="card-body">
+                <h5 class="card-title"><i class="fas fa-user-check"></i> <span class="float-right">Recovered</span></h5>
+                <h3 class="float-right">{{ global.recovered | number }}</h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="col">
+        <div class="card border-info">
+            <div class="card-body">
+                <h5 class="card-title"><i class="fas fa-stethoscope"></i> <span class="float-right">Tested</span></h5>
+                <h3 class="float-right">{{ global.tests | number }}</h3>
+            </div>
+        </div>
+    </div>
+</div>
+
+<br />
+
+<div class="row">
+    <div class="col">
+        <div class="card border-info">
+            <div class="card-body">
+                <h5 class="card-title"><i class="far fa-check-circle"></i> <span class="float-right">Today's Cases</span></h5>
+                <h3 class="float-right">{{ global.todayCases | number }}</h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="col">
+        <div class="card border-warning">
+            <div class="card-body">
+                <h5 class="card-title"><i class="fas fa-exclamation-triangle"></i> <span class="float-right">Critical</span></h5>
+                <h3 class="float-right">{{ global.critical | number }}</h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="col">
+        <div class="card border-danger">
+            <div class="card-body">
+                <h5 class="card-title"><i class="fas fa-skull-crossbones"></i> <span class="float-right">Deceased</span></h5>
+                <h3 class="float-right">{{ global.deaths | number }}</h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="col">
+        <div class="card border-primary">
+            <div class="card-body">
+                <h5 class="card-title"><i class="fas fa-flag"></i> <span class="float-right">Affected Countries</span></h5>
+                <h3 class="float-right">{{ global.affectedCountries | number }}</h3>
+            </div>
+        </div>
+    </div>
+</div>

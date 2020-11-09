@@ -1,0 +1,12 @@
+table {
+    width: 100%;
+}
+
+th.mat-sort-header-sorted {
+    color: black;
+}
+
+.flag {
+    width: 30px;
+    height: 30px;
+}
